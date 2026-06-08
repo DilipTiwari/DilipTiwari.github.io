@@ -1,0 +1,23 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="720" height="220" viewBox="0 0 720 220" role="img" aria-label="Cricket Career logo">
+  <defs>
+    <linearGradient id="g" x1="0" x2="1" y1="0" y2="1">
+      <stop offset="0%" stop-color="#00e5ff"/>
+      <stop offset="55%" stop-color="#20ff8a"/>
+      <stop offset="100%" stop-color="#ffe66d"/>
+    </linearGradient>
+    <filter id="shadow" x="-20%" y="-20%" width="140%" height="140%">
+      <feDropShadow dx="0" dy="8" stdDeviation="8" flood-color="#000" flood-opacity=".45"/>
+    </filter>
+  </defs>
+  <rect width="720" height="220" rx="42" fill="#07111f"/>
+  <g filter="url(#shadow)">
+    <circle cx="104" cy="110" r="68" fill="url(#g)" opacity=".95"/>
+    <path d="M73 139 L142 70" stroke="#081322" stroke-width="20" stroke-linecap="round"/>
+    <path d="M132 64 L153 85" stroke="#081322" stroke-width="16" stroke-linecap="round"/>
+    <circle cx="84" cy="78" r="15" fill="#fff"/>
+    <path d="M75 73 C81 82 90 86 99 84" stroke="#e94444" stroke-width="4" fill="none"/>
+  </g>
+  <text x="198" y="103" fill="#fff" font-family="Arial Black, Impact, sans-serif" font-size="58" letter-spacing="1">CRICKET</text>
+  <text x="198" y="162" fill="url(#g)" font-family="Arial Black, Impact, sans-serif" font-size="58" letter-spacing="1">CAREER</text>
+  <text x="506" y="194" fill="#9fb6d6" font-family="Arial, sans-serif" font-size="18">3D Web Cricket</text>
+</svg>

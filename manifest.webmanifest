@@ -1,0 +1,11 @@
+{
+  "name": "Cricket Career",
+  "short_name": "Cricket Career",
+  "start_url": "./index.html",
+  "display": "standalone",
+  "background_color": "#06111f",
+  "theme_color": "#00e5ff",
+  "icons": [
+    { "src": "assets/icon.svg", "sizes": "512x512", "type": "image/svg+xml" }
+  ]
+}
