@@ -1,0 +1,54 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+  <meta name="theme-color" content="#041018">
+  <title>Play Cricket Career - Cinematic Web Cricket Game</title>
+  <meta name="description" content="Play the Cricket Career prototype with toss ceremony, jersey selection, batting controls, bowling controls, umpire signals and match highlights.">
+  <link rel="canonical" href="https://diliptiwari.github.io/play.html">
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body class="game-body">
+<div class="game-shell">
+  <div class="game-top"><a class="brand" href="index.html"><span class="logo">CC</span><span>Cricket Career</span></a><div class="actions"><a class="btn secondary" href="index.html">Back to site</a><button id="newMatch" class="btn danger" type="button">New Match</button></div></div>
+  <div class="game-layout">
+    <section class="canvas-card" aria-label="Cricket game camera">
+      <canvas id="gameCanvas" width="1100" height="720"></canvas>
+      <div class="hud"><span id="scoreText" class="pill">0/0</span><span id="targetText" class="pill">First innings</span><span id="cameraText" class="pill">Selection Cam</span></div>
+      <div id="commentaryText" class="ticker">Select teams and start the match.</div>
+    </section>
+    <aside class="panel" id="selectionPanel">
+      <h2>Match Setup</h2>
+      <p class="small">Choose teams, jersey colour and overs. Rosters are original fictional names for copyright-safe gameplay.</p>
+      <div class="form-row"><label for="teamSelect">Your team</label><select id="teamSelect"></select></div>
+      <div class="form-row"><label for="oppSelect">Opponent</label><select id="oppSelect"></select></div>
+      <div class="form-row"><label for="colorSelect">Jersey colour</label><select id="colorSelect"></select></div>
+      <div class="form-row"><label for="overSelect">Overs</label><select id="overSelect"><option value="1">1 over</option><option value="2" selected>2 overs</option><option value="5">5 overs</option></select></div>
+      <button id="startMatch" class="btn" type="button">Start cinematic match</button>
+      <div class="notice" style="margin-top:1rem">AdSense-safe note: this game uses original text, shapes and fictional player names. Do not add copied player photos, official logos or scraped content unless you have rights.</div>
+    </aside>
+    <aside class="panel hidden" id="tossPanel">
+      <h2>Toss</h2>
+      <p class="small">Camera shows the umpire and both captains. Choose the call and watch the coin.</p>
+      <div class="choice-row"><button id="tossHeads" data-group="tossChoice" class="chip active" type="button">Heads</button><button id="tossTails" data-group="tossChoice" class="chip" type="button">Tails</button></div>
+      <h3>If you win toss</h3><div class="choice-row"><button id="chooseBat" class="btn" type="button">Bat first</button><button id="chooseBowl" class="btn secondary" type="button">Bowl first</button></div>
+      <p class="small">If opponent wins, their captain will choose automatically.</p>
+    </aside>
+    <aside class="panel hidden" id="controlPanel">
+      <h2>Live Controls</h2>
+      <div class="scorebox"><div class="metric"><b id="teamText">Team</b><span>Batting side</span></div><div class="metric"><b id="batterText">Batter</b><span>Striker</span></div><div class="metric"><b id="bowlerText">Bowler</b><span>Current bowler</span></div><div class="metric"><b><span id="confText">35</span>/100</b><span>Bat confidence</span></div></div>
+      <h3>Batting</h3><p class="small">Swipe on the field to aim, then choose shot power.</p><div class="choice-row"><button class="chip" data-group="shotChoice" data-shot="Push" type="button">Push</button><button class="chip active" data-group="shotChoice" data-shot="Stroke" type="button">Stroke</button><button class="chip" data-group="shotChoice" data-shot="Loft" type="button">Loft</button></div><button id="playShot" class="btn" type="button">Play shot</button>
+      <h3>Bowling</h3><div class="choice-row"><button class="chip active" data-group="bowlChoice" data-bowl="Good Length" type="button">Good Length</button><button class="chip" data-group="bowlChoice" data-bowl="Yorker" type="button">Yorker</button><button class="chip" data-group="bowlChoice" data-bowl="Bouncer" type="button">Bouncer</button><button class="chip" data-group="bowlChoice" data-bowl="Spin" type="button">Spin</button></div>
+      <div class="form-row"><label for="speedRange">Delivery speed: <span id="speedValue">135 km/h</span></label><input id="speedRange" type="range" min="70" max="155" value="135"></div><button id="bowlNow" class="btn secondary" type="button">Bowl now</button>
+      <h3>Confidence</h3><div class="small">Bat <span id="confText2"></span></div><div class="bar"><i id="confBar"></i></div><div class="small">Bowl <span id="bowlConfText">35</span>/100</div><div class="bar"><i id="bowlConfBar"></i></div><div class="control-row"><button id="specialBtn" class="btn warn" type="button">Special locked</button><button id="nextBall" class="btn secondary" type="button">Continue</button></div>
+      <h3>Commentary Log</h3><div id="miniLog"></div>
+      <button id="viewHighlights" class="btn secondary" type="button" style="margin-top:.75rem">View highlights</button>
+    </aside>
+    <aside class="panel hidden" id="highlightPanel"><h2>Highlights</h2><p class="small">Fours, sixes, wickets, catches and boundary saves are saved here.</p><div id="highlightList" class="highlight-list"></div><button class="btn secondary" type="button" onclick="location.reload()">Restart game</button></aside>
+    <aside class="panel hidden" id="resultPanel"><h2>Result</h2><p id="resultText"></p><button class="btn" type="button" onclick="document.getElementById('highlightPanel').classList.remove('hidden');document.getElementById('resultPanel').classList.add('hidden');">View highlights</button></aside>
+  </div>
+</div>
+<script src="game.js"></script>
+</body>
+</html>

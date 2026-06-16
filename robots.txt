@@ -1,0 +1,4 @@
+User-agent: *
+Allow: /
+
+Sitemap: https://diliptiwari.github.io/sitemap.xml
